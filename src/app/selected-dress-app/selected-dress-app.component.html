@@ -1,0 +1,95 @@
+
+<section class="path-line">
+        <div class="path-line__container">
+            <div class="path">
+                <div class="path__home" [routerLink] = "''" >Home</div>
+                <div class="path__to"></div>
+                <div class="path__women path__women--active" [routerLink] = "'/dresses'">Women</div>
+                <div class="path__to"></div>
+                <div class="path__dresses" [routerLink] = "'/dresses'">Dresses</div>
+                <div class="path__to"></div>
+                <div class="path__dresses">{{selectedDress.color}} {{selectedDress.style}} {{selectedDress.style2}}</div>
+            </div>
+        </div>
+    </section>
+<div class="pop-box">
+    <div class="img-side">
+        <div class="img-side__photo" [style.backgroundImage]="'url('+ selectedDress.photo +')'"></div>
+        <div class="img-side__small-photos">
+            <div class="small-photo" [style.backgroundImage]="'url('+ selectedDress.small1 +')'"></div>
+            <div class="small-photo" [style.backgroundImage]="'url('+ selectedDress.small2 +')'"></div>
+            <div class="small-photo" [style.backgroundImage]="'url('+ selectedDress.small3 +')'"></div>
+            <div class="small-photo" [style.backgroundImage]="'url('+ selectedDress.small4 +')'"></div>
+            <div class="small-photo" [style.backgroundImage]="'url('+ selectedDress.small5 +')'"></div>
+        </div>
+    </div>
+    <div class="info-side">
+        <div class="info-side__title">{{selectedDress.color}} {{selectedDress.style}} {{selectedDress.style2}}</div>
+        <div class="info-side__price">{{selectedDress.price}}</div>
+        <div class="info-side__color">
+            <p class="color-text">Color:</p>
+            <div class="color-box"></div>
+            <div class="color-box color-box--2"></div>
+            <div class="color-box color-box--3"></div>
+        </div>
+        <div class="info-side__size">
+            <p class="size-text">Size:</p>
+            <div class="size-box"><img src="../../assets/images/size-1.svg" alt=""></div>
+            <div class="size-box"><img src="../../assets/images/size-2.svg" alt=""></div>
+            <div class="size-box"><img src="../../assets/images/size-3.svg" alt=""></div>
+            <div class="size-box"><img src="../../assets/images/size-4.svg" alt=""></div>
+            <div class="size-box"><img src="../../assets/images/size-5.svg" alt=""></div>
+            <div class="size-box"><img src="../../assets/images/size-6.svg" alt=""></div>
+            <div class="size-select"></div>
+        </div>
+        <button (click)="openModel()" class="info-side__btn">Add to bag</button>
+        <div class="info-side__add-wish">
+            <div class="add-wish">
+                    <div class="heart-wish"></div>  
+                    <span>Add to wish list</span>
+            </div>
+             <div class="size-guide">
+                 <img src="../../assets/images/ruler.svg" alt="">
+                 <span>Size guide</span></div>
+             </div>
+        <div class="info-side__section">
+            <p>Product details </p> <img src="../../assets/images/plus.svg" alt=""></div>
+        <div class="info-side__section">
+            <p>Delivery </p> <img src="../../assets/images/plus.svg" alt=""></div>
+        <div class="info-side__section">
+            <p>Returns</p> <img src="../../assets/images/plus.svg" alt=""></div>   
+    </div>
+</div>
+
+<ngx-smart-modal #myModal identifier="myModal2">
+<div class="added-to-bag">SUCCESSFULLY ADDED TO BAG!</div>
+
+
+
+
+
+<div class="general-info">
+    <div class="general-info__photo general-info__photo--sm" [style.backgroundImage]="'url('+ selectedDress.photo +')'"></div>
+    <div class="general-info__info">
+        <div class="info-side__title info-side__title--sm">{{selectedDress.color}} {{selectedDress.style}} {{selectedDress.style2}}</div>
+        <div class="info-side__price info-side__price--sm">{{selectedDress.price}}</div>
+        <div class="info-side__color info-side__color--sm">
+            <p class="color-text">Color:</p>
+            <div class="color-box"></div>
+        </div>
+        <div class="info-side__size info-side__size--sm">
+            <p class="size-text">Size:</p>
+            <div>38 (M)</div>
+        </div>
+        <div class="info-side__size info-side__size--sm">
+            <p class="size-text">Qt:</p>
+            <div>1</div>
+        </div>
+        <button  class="info-side__btn info-side__btn--small">View bag</button>
+        <button  class="info-side__btn info-side__btn--wh info-side__btn--small">Checkout</button>
+    </div>
+</div>
+
+  
+        
+    </ngx-smart-modal>

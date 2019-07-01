@@ -1,0 +1,130 @@
+<header class="header">
+  <div class="header__red-line">
+    <div class="red-container">
+            <div class="red-container__find-store"> 
+                <img src="../../assets/images-header/location.svg" alt="">
+                <p>Find a store</p> 
+            </div>
+            <div class="red-container__create-account">
+                <img src="../../assets/images-header/user.svg" alt=""> 
+                <p (click)="openModel()">Create Account / Sign in</p> 
+            </div>
+    </div>
+  </div>
+  <div class="header__white-line">
+    <div class="white-container">
+<ul  class="white-container__nav">
+    <li class="nav__li">New</li>
+    <li class="nav__li" [routerLink] = "'/dresses'" routerLinkActive="nav__li--active">Women</li>
+    <li class="nav__li">Men</li>
+    <li class="nav__li">Kids</li>
+</ul>
+
+        <!-- <mat-menu #appMenu="matMenu" class="white-container__nav">
+            <button mat-menu-item class="nav__li">>New</button>
+            <button mat-menu-item class="nav__li">>New</button>
+            <button mat-menu-item class="nav__li">>New</button>
+         </mat-menu>
+         <button mat-icon-button #btn[matMenuTriggerFor]="appMenu">
+            <mat-icon>more_vert</mat-icon>
+          </button> -->
+            <div class="white-container__logo" [routerLink] = "''"></div>
+            <div class="white-container__user-box">
+                <input type="text" class="user-box__input">
+                <div class="user-box__like"><img src="../assets/images-header/like.svg" alt=""></div>
+                <div class="user-box__basket"><img src="../assets/images-header/bag.svg" alt=""></div>
+            </div>
+           
+            
+      </div>
+  </div>
+</header>
+
+
+
+
+<ngx-smart-modal #myModal identifier="myModal">
+  
+    <div class="sign-and-create">
+      <button 
+        (click)="switchTab('login')" 
+        class="sign-and-create__btn "
+        [ngClass]="activeTab == 'login' ? 'sign-and-create__btn--active' : ''" >
+        Sign In
+      </button>
+      <button 
+        (click)="switchTab('create')" 
+        class="sign-and-create__btn "
+        [ngClass]="activeTab == 'create' ? 'sign-and-create__btn--active' : ''" >
+        Create an account
+      </button>
+    </div>
+
+    <div *ngIf="activeTab == 'login'" class="box-1">
+    <div class="main-part">
+      <div class="main-part__inputs">
+        <input type="email" class="email-and-pass" placeholder="Email">
+        <input type="password" class="email-and-pass" placeholder="Password">
+      </div>
+      <div class="main-part__log-and-forgot">
+        <div class="log-in">
+            <input type="checkbox" class="checkbox" id="log" />
+            <label class="log-in__label"for="log">Keep logged in</label>
+        </div>
+        <div class="forgotten">Forgotten your password?</div>
+      </div>
+      <div class="main-part__sign-with">
+        <button class="sign-in">Sign in</button>
+        <button class="sign-in sign-in--fb"><img src="../../assets/images-header/fb-modal.svg" alt=""> <p>Sign in with facebook</p></button>
+      </div>
+      <div class="main-part__footer">
+        <p class="new-to">New to</p>
+        <div (click)="myModal.close()" [routerLink] = "''" class="logo"></div>
+        <p class="create-account">Create account</p>
+      </div>
+    </div>
+  </div>
+
+    
+      <div *ngIf="activeTab == 'create'" class="box-2">
+      <div class="main-part">
+        <div class="main-part__description">Creating an account has many benefits:
+            check out faster, track orders, earn rewards, access to history and more </div>
+        <div class="main-part__sign-with">
+              <button class="sign-in sign-in--fb"><img src="../../assets/images-header/fb-modal.svg" alt=""> <p>Sign in with facebook</p></button>
+        </div>
+        <div class="main-part__or">or</div>
+        <div class="main-part__inputs">
+              <input type="name" class="email-and-pass" placeholder="Name">
+              <input type="name" class="email-and-pass" placeholder="Last Name">
+        </div>
+        <div class="check-sex">
+              <label class="check-sex__label"><input type="radio" name="sex"/>Female</label>
+              <label class="check-sex__label"><input type="radio" name="sex"/>Male</label>
+              
+        </div>
+        <div class="main-part__inputs">
+          <input type="email" class="email-and-pass" placeholder="Email">
+          <input type="password" class="email-and-pass" placeholder="Password">
+        </div>
+        <div class="main-part__log-and-forgot">
+          <div class="log-in">
+              <input type="checkbox" class="checkbox" id="get" />
+              <label class="log-in__label" for="get"><p>I would like to recieve news and</p>
+                <img src="../../assets/images-header/small-logo.svg" alt="logo">
+                 <p>news via email</p></label>
+          </div>     
+        </div>
+        <div class="main-part__sign-with">
+            <button class="sign-in">Create an account</button>
+        </div>    
+    </div>
+  </div>
+
+
+
+
+
+  
+    <!-- <button (click)="myModal.close()">Close</button> -->
+  </ngx-smart-modal>

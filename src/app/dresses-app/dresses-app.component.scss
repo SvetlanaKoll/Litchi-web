@@ -1,0 +1,413 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap');
+*{
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+}
+.path-line__container{
+    width: 65.5%;
+    margin: 0 auto;
+}
+.path{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: #999;
+    font-size: 12px;
+    margin-top: 20px;
+    &__to{
+        background-image: url('../../assets/images/right.svg');
+        width: 4px;
+        height: 8px;
+        background-size: cover;
+        margin-right: 6px;
+        margin-left: 6px;
+    }
+    &__women--active{
+        border-bottom: 1px solid #999;
+    }
+}
+.path > *:hover{
+        cursor: pointer;
+        transform: scale(1.1, 1.1);
+        transition: 0.3s;
+}
+.aside-and-main{
+    width: 100%;
+    &__container{
+        width: 65.5%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+
+    }
+    &__aside{
+        width: 23%;
+        max-height: 578px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-top: 38px;
+        border: 1px solid #E5E5E5;
+        
+    }
+    &__main{
+        width: 75%; 
+    }
+}
+.filter{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 13px;
+    &__filtered{
+        color: #333;
+        font-weight: 500;
+        font-size: 0.625em;
+        margin-left: 15px;
+        
+    }
+    &__clear-all{
+        color: #999;
+        font-weight: 500;
+        font-size: 0.625em;
+        margin-right: 10px;
+        border-bottom: 1px solid #999;
+        &:hover{
+            cursor: pointer;
+            transform: scale(1.1, 1.1);
+            transition: 0.3s;
+        }
+        
+    }
+
+}
+.filter-shown{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 15px;
+    &__dresses, &__all-casual-dresses{
+        font-weight: 500;
+        color: #999;
+        font-size: 0.75em;
+        margin-left: 15px;
+        position: relative;
+        &:after{
+            content: url('../../assets/images/cross.svg');
+            width: 5px;
+            height: 5px;
+            position: absolute;
+            top: -5px; 
+        }
+        
+    }
+    
+}
+.filter__clear-all:active + .filter-shown{
+    visibility: hidden;
+}
+.red-line{
+    height: 7px;
+    width: 100%;
+    margin-top: 20px;
+    background-color: #EB2835;
+}
+.section{
+    width: 100%;
+    height: 30px;
+    padding-left: 15px;
+    padding-right: 10px;
+    font-size: 0.75em;
+    font-weight: 500;
+    color: #333;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 0.5px solid #E5E5E5;
+    &--style{
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.11);
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    &-minus{
+        display: flex;
+        align-items: center;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    &-plus:hover{
+        cursor: pointer;
+    }
+}
+.section-open{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    
+    &__input{
+        padding-left: 15px;
+        font-size: 0.75em;
+        font-weight: 400;
+        color: #333;
+        display: flex;
+        align-items: center;
+        margin-top: 5px;
+        &--first{
+            margin-top: 15px;
+        }
+        &--last{
+            margin-bottom: 42px;
+        }
+        & > label{
+            padding-left: 10px;
+        }
+    }
+}
+.checkbox{
+    display: none;
+}
+label:before{
+	content:'';
+	display: inline-block;
+	height:14px;
+	width: 14px;
+	background:#fff;
+	border: 1px solid #999999;
+	margin-left:-10px;
+	margin-right:10px;
+	vertical-align: middle;
+}
+.checkbox:checked + label:before{
+	content:'';
+    background-image: url("../../assets/images/select.svg");
+    background-size:100%;
+}
+.sort-and-view{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 23px;
+    margin-top: 38px;
+    margin-bottom: 30px;
+    &__sort, &__view{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 30px;
+    }
+}
+.sort-by, .view-per-page{
+    font-size: 0.75em;
+    font-weight: 400;
+    color: #999;
+}
+.view-per-page--smaller{
+    font-size: 0.68em;
+    margin-left: 6px;
+}
+.select{
+    height: 100%;
+    margin-left: 8px;
+    color: #333;
+    font-size: 0.625em;
+    width: 123px;
+    outline: none;
+    & > option:not(:checked) {
+        background-color:#fff;
+    }
+    &--view{
+        width: 71px;
+        padding-left: 20px;
+    
+    }
+    &__option--view:placeholder{
+        text-align: center;
+    }
+}
+
+.item{
+    width: 100%;
+    height: 387px;
+    
+    border: 1px solid #E5E5E5;
+    margin-bottom: 40px;
+    
+    &__text{
+        font-size: 0.75em;
+        font-weight: 400;
+        color: #999;
+        margin-left: 14px;
+        margin-right: 14px;
+        margin-top: 15px;
+    }
+    &__price{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        align-self: flex-end;
+        margin-right: 22px;
+        margin-top: 18px;
+        font-weight: 500;
+        font-size: 0.875em;
+        color: #333;
+        position: absolute;
+        bottom: 50px;
+        right: 0;
+        & > p {
+            margin: 0;
+        }
+    }
+    &__hover{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        &--quick, &--add{
+            font-size: 0.625em;
+            color: #999;
+            width: 49.5%;
+            background-color: rgba(255, 255, 255, 0.8);
+            text-transform: uppercase;
+            line-height: 30px;
+            text-align: center;
+            
+            height: 30px;
+            margin-top: -30px;
+            &:hover{
+                display: block;
+            }
+            // visibility: hidden;
+        }
+        
+    }
+    &__photo{
+        width: 100%;
+        height: 290px;
+        background-position: center center;
+        
+    }
+
+}
+.dresses-list{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    &__list{
+        margin-right:1%;
+        width: 24%;
+        position: relative;
+        &:hover .item__hover{
+            visibility: visible;
+            cursor: pointer;
+        }
+        
+    }
+    
+}
+@media screen and (max-width: 1350px) {
+    .filter-shown__all-casual-dresses{
+        margin-left: 10px;
+    }
+}
+@media screen and (max-width: 1300px) {
+    .filter-shown__all-casual-dresses, .filter-shown__dresses{
+        margin-left: 10px;
+        font-size: 0.7em;
+    }
+    .section{
+        font-size: 0.7em;
+    }
+    .item__price{
+        margin-top: 13px;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .filter-shown{
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 10px;
+    }
+    .section{
+        font-size: 0.7em;
+    }
+    .item__price{
+        margin-top: 11px;
+    }
+}
+@media screen and (max-width: 400px) {
+    .path{
+        justify-content: center;
+        margin-top: 10px;
+        &__home,&__women, &__to{
+            display: none;
+        }
+        &__dresses{
+            text-transform: uppercase;
+            font-size: 1.5em;
+        }
+    }
+    .aside-and-main__container{
+        width: 95%;
+        flex-direction: column;
+    }
+    .aside-and-main__aside{
+       width: 100%;
+       margin-top: 10px;
+       max-height: 650px;
+    }
+    .section, .section-open__input{
+        font-size: 0.9em;
+    }
+    .section{
+        height: 35px;
+    }
+    .filter, .filter-shown{
+        font-size: 1.3em;
+    }
+    .aside-and-main__main{
+        width: 100%;
+    }
+    .sort-and-view{
+        &__sort{
+           width: 100%;
+           justify-content: flex-start;
+           margin-left: 0;
+        }
+        &__view{
+            display: none;
+        }
+    }
+    .sort-by{
+        display: none;
+    }
+    .select--best{
+        width: 60%;
+        height: 45px;
+        font-size: 1.125em;
+        color: #333;
+        text-align-last:center;
+        background-color: #fff;
+    }
+    .item{
+        margin-bottom: 10px;
+        &__price{
+            bottom:20px;
+        }
+    }
+    .dresses-list{
+        width: 100%;
+        margin-left: 1%;
+        &__list{
+            width: 48%;
+        }
+    }
+}

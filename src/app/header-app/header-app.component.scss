@@ -1,0 +1,300 @@
+
+.nsm-dialog-btn-close{
+    top: -21px !important;
+    right: -24px !important;
+}
+.sign-and-create{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
+    &__btn{
+        width: 50%;
+        height: 70px;
+        background: #F7F2F2;
+        border: 1px solid #DFD7D7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+        color: #333;
+        font-size: 0.93em;
+        outline: none;
+        &--active{
+            background: #FFFFFF;
+            border-bottom: 7px solid #EB2835; 
+            
+        }
+        &:hover{
+            cursor: pointer;
+        }
+           
+        
+    }
+}
+.main-part{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    color: #999;
+    &__inputs{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 73%;
+    }
+    &__log-and-forgot{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 73%;
+        margin-top: 10px;
+        margin-bottom: 25px;
+    }
+    &__sign-with{
+        width: 73%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    &__footer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    &__description{
+        width: 60%;
+        color: #999;
+        text-align: center;
+        font-size: 0.75em;
+        margin-top: -40px;
+        margin-bottom: 20px;
+    }
+    &__or{
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 0.9em;
+        color: #999;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
+.email-and-pass{
+    width: 100%;
+    height: 50px;
+    font-size: 0.8125em;
+    color: #999;
+    border: 1px solid #DFD7D7;
+    padding-left: 15px;
+    margin-bottom: 20px;
+    outline: none;
+}
+.log-in{
+    display: flex;
+    align-items: center;
+    font-size: 0.75em;
+    margin-left: 10px;
+    &__label{
+        display: flex;
+        align-items: center;
+        font-size: 0.8em;
+        & > img{
+            margin: 0 6px;
+        }
+    }
+    
+}
+
+.checkbox{
+    display: none;
+}
+.log-in__label:before{
+	content:'';
+	display: inline-block;
+	height:14px;
+	width: 14px;
+	background:#fff;
+	border: 1px solid #DFD7D7;
+	margin-left:-10px;
+	margin-right:10px;
+	vertical-align: middle;
+}
+.checkbox:checked + .log-in__label:before{
+	content:'';
+    background-image: url("../../assets/images/select.svg");
+    background-size:100%;
+}
+.forgotten{
+    font-size: 0.69em;
+    color: #999;
+    border-bottom:  1px solid #DFD7D7;
+
+    
+    &:hover{
+        cursor: pointer;
+        transform: scale(1.2, 1.2);
+        transition: 0.2s;
+    }
+}
+.sign-in{
+    width: 100%;
+    height: 50px;
+    background-color: #333;
+    color: #fff;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    font-size: 0.9em;
+    margin-bottom: 20px;
+    &:hover{
+        cursor: pointer;
+    transform: scale(1.05, 1.05);
+    transition: 0.3s;
+    }
+    &--fb{
+        background-color: #576EA5;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        & > img{
+            padding-right: 25px;
+        }
+        &:hover{
+            cursor: pointer;
+        transform: scale(1.05, 1.05);
+        transition: 0.3s;
+        }
+    }
+}
+.new-to{
+    font-size: 0.69em;
+    text-transform: uppercase;
+}
+.logo{
+    width: 53px;
+    height: 17px;
+    background-image: url(../../assets/images-header/small-logo.svg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    &:hover{
+        cursor: pointer;
+        transform: scale(1.1, 1.1);
+        transition: 0.3s;
+    }
+}
+.create-account{
+    font-size: 0.69em;
+    border-bottom:  1px solid #DFD7D7;
+    &:hover{
+        cursor: pointer;
+        transform: scale(1.1, 1.1);
+        transition: 0.3s;
+    }
+}
+.check-sex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+    margin-bottom: 20px;
+    &__label{
+        display: flex;
+        align-items: center;
+        & > input{
+            margin-bottom: 4px;
+        }
+    }
+}
+
+
+@media screen and (max-width: 400px) {
+    .red-container{
+        display: none;
+    }
+    .white-container{
+        width: 89.5%;
+        position: relative;
+        &__nav{
+            background-image: url(../../assets/images-header/burger-menu.svg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 70%;
+            width: 30px;
+            height: 30px;
+        }
+        &__logo{
+            width: 26%;
+        }
+        &__user-box{
+            width: 13%;
+            
+        }
+    }
+    .user-box__like{
+        margin-left: 0;
+    }
+    .user-box__input{
+        border: none;
+        width: 25px;
+        position: absolute;
+        left: 11%;
+    }
+    .user-box__basket{
+        margin-left: 40%;
+    }
+    .nav__li{
+        visibility: hidden;  
+    }
+    .sign-and-create{
+        margin-bottom: 35px;
+        margin-top: 20px;
+        &__btn{
+            height: 55px;
+            font-size: 0.69em;
+        }
+    }
+    .main-part{
+        &__inputs, &__log-and-forgot, &__sign-with{
+            width: 85%;
+        }
+        &__description{
+            margin-top: -25px;
+            width: 85%;
+            font-size: 0.65em;
+        }
+        
+    }
+    .check-sex{
+        width: 65%;
+    }
+    .forgotten, .log-in{
+        font-size: 0.5em;
+    }
+    .sign-in{
+        font-size: 0.7em;
+    }
+    .email-and-pass{
+        height: 45px;
+    }
+    
+    
+    
+}
+
+//doesn`t work !
+.popperSpecialStyle{
+    border: navajowhite;
+}
+.pop-up{
+    margin: 0;
+}

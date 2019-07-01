@@ -1,0 +1,55 @@
+<footer class="footer">
+  <div class="footer-grey">
+      <div class="footer-grey__container">
+          <div  [routerLink] = "''" class="footer-grey-logo"></div>
+          <div class="footer-grey-text">
+                <p class="footer-grey-text__subscribe">
+                    Subscribe to our newsletter
+                </p>
+                <p class="footer-grey-text__receive">
+                    Receive our latest offers & promotions
+                </p>
+            </div>
+            <div *ngIf="!mailIsSent" class="footer-grey-inputs">
+                <input [(ngModel)]="userEmail" type="email" class="footer-grey-inputs__input" placeholder="Enter email adress...">
+                <button (click)="sendEmail()" class="footer-grey-inputs__btn">Subscribe</button>
+            </div>
+            <div *ngIf="mailIsSent" class="footer-grey-inputs">
+                <h4>Subscribed with {{userEmail}}!</h4>
+            </div>
+        </div>
+    </div>
+    <div class="footer-white">
+        <div class="footer-white__container">
+            <div class="words-box">
+                <div class="footer-white-words">
+                    <p class="footer-white-words__p">about us</p>
+                    <p class="footer-white-words__p">gift voucher</p>
+                    <p class="footer-white-words__p">privacy</p>
+                </div>
+                <div class="footer-white-words footer-white-words--2">
+                    <p class="footer-white-words__p">sizing help</p>
+                    <p class="footer-white-words__p">delivery</p>
+                    <p class="footer-white-words__p">returns</p>
+                </div>
+                <div class="footer-white-words">
+                    <p class="footer-white-words__p">contact us</p>
+                    <p class="footer-white-words__p">terms</p>
+                    <p class="footer-white-words__p">sitemap</p>
+                </div>
+            </div>
+            <div class="links-footer-box">
+                <div class="links-footer-box__find-us">Find us on</div>
+                <div class="links-footer-box__links">
+                    <div class="link"> <img src="../assets/images-footer/f.svg" alt=""> </div>
+                    <div class="link"><img src="../assets/images-footer/tw.svg" alt=""></div>
+                    <div class="link"><img src="../assets/images-footer/inst.svg" alt=""></div>
+                    <div class="link"><img src="../assets/images-footer/p.svg" alt=""></div>
+                    <div class="link"><img src="../assets/images-footer/in.svg" alt=""></div>
+                    <div class="link"><img src="../assets/images-footer/g.svg" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</footer>

@@ -1,0 +1,134 @@
+<section class="path-line">
+    <div class="path-line__container">
+        <div class="path">
+            <div class="path__home" [routerLink] = "''" >Home</div>
+            <div class="path__to"></div>
+            <div class="path__women path__women--active">Women</div>
+            <div class="path__to"></div>
+            <div class="path__dresses">Dresses</div>
+        </div>
+    </div>
+</section>
+<div class="aside-and-main">
+    <div class="aside-and-main__container">
+        <div class="aside-and-main__aside">
+            <div class="filter">
+                <div class="filter__filtered">Filtered by:</div>
+                <div (click)="clearFilter()" class="filter__clear-all">Clear all</div>
+            </div>
+            <div *ngIf="!filterIsCleared" class="filter-shown">
+                <div class="filter-shown__dresses">Dresses</div>
+                <div class="filter-shown__all-casual-dresses">All casual dresses</div>
+            </div>
+            <div class="red-line"></div>
+            <div class="section section--size">
+                <div class="section--size__size">Size</div>
+                <div class="section-plus"><img src="assets/images/plus.svg" alt=""></div>
+            </div>
+            <div (click)="clearSection()" class="section" [ngClass]="sectionIsCleared ? '' : '' " section--style>
+                    <div (click)="myStyle={'box-shadow':'none'}" class="section--style__style">Style</div>
+                    <div (click)="clearSection()"  class="section-minus"><img src="{{sectionIsCleared ? 'assets/images/plus.svg' : 'assets/images/minus.svg'}}" alt=""></div>
+            </div>
+            <div *ngIf="!sectionIsCleared"  class="section-open section-open--size">
+                    <div class="section-open__input section-open__input--first ">
+                        <input type="checkbox" class="checkbox" id="1" />
+                        <label (click)="refreshFilter()" for="1">All casual dresses</label>
+                    </div>
+                    <div class="section-open__input">
+                            <input (click)="filterBy('Maxi')" type="checkbox" class="checkbox" id="2" />
+                            <label for="2">Maxi dresses</label>
+                    </div>
+                    <div class="section-open__input">
+                            <input type="checkbox" class="checkbox" id="3" />
+                            <label for="3">Summer dresses</label>
+                    </div>
+                    <div class="section-open__input">
+                            <input type="checkbox" class="checkbox" id="4" />
+                            <label for="4">Shift dresses</label>
+                    </div>
+                    <div class="section-open__input">
+                            <input (click)="filterBy('Shirt')" type="checkbox" class="checkbox" id="checkbox" />
+                            <label for="checkbox">Shirt dresses</label>
+                    </div>
+                    <div class="section-open__input">
+                            <input type="checkbox" class="checkbox" id="5" />
+                            <label for="5">Tunic dresses</label>
+                    </div>
+                    <div class="section-open__input">
+                            <input type="checkbox" class="checkbox" id="6" />
+                            <label for="6">Pencil dresses</label>
+                    </div>
+                    <div class="section-open__input section-open__input--last">
+                            <input type="checkbox" class="checkbox" id="7" />
+                            <label for="7">Jumper dresses</label>
+                    </div>
+                </div>
+            <div class="section section--occasion">
+                <div class="section--occasion__occasion">Occasion</div>
+                <div class="section-plus section--occasion__plus"><img src="assets/images/plus.svg" alt=""></div>
+            </div>
+            <div class="section section--fit">
+                <div class="section--fit__fit">Fit</div>
+                <div class="section-plus section--fit__plus"><img src="assets/images/plus.svg" alt=""></div>
+            </div>
+            <div class="section section--brand">
+                <div class="section--brand__brand">Brand</div>
+                <div class="section-plus section--brand__plus"><img src="assets/images/plus.svg" alt=""></div>
+            </div>
+            <div class="section section--color">
+                <div class="section--color__color">Color</div>
+                <div class="section-plus section--color__plus"><img src="assets/images/plus.svg" alt=""></div>
+            </div>
+            <div class="section section--length">
+                <div class="section--length__length">Length</div>
+                <div class="section-plus section--length__plus"><img src="assets/images/plus.svg" alt=""></div>
+            </div>
+            <div class="section section--sleeve-length">
+                <div class="section--sleeve-length__sleeve-length">Sleeve length</div>
+                <div class="section-plus section--sleeve-length__plus"><img src="assets/images/plus.svg" alt=""></div>
+            </div>
+            <div class="section section--discount">
+                    <div class="section--discount__discount">Discount</div>
+                    <div class="section-plus section--discount__plus"><img src="assets/images/plus.svg" alt=""></div>
+                
+            </div>
+        </div>
+        <div class="aside-and-main__main">
+            <div class="sort-and-view">
+                <div class="sort-and-view__sort">
+                    <div class="sort-by">Sort by:</div>
+                    <select class="select select--best">
+                        <option value="best" class="select__option">Best selling</option>
+                        <option value="new" class="select__option">Newest</option>
+                        <option value="price-low" class="select__option">Price (low-high)</option>
+                        <option value="price-high" class="select__option">Price (high-low)</option>
+                        <option value="discount" class="select__option">Best discount</option>
+                    </select>
+                </div>
+                <div class="sort-and-view__view">
+                        <div class="view-per-page">View per page:</div>
+                        <select class="select select--view">
+                            <option value="60" class="select__option select__option--view">60</option>
+                            <option value="100" class="select__option">100</option>
+                            <option value="160" class="select__option">160</option>
+                        </select>
+                        <div class="view-per-page view-per-page--smaller">60 of 4745</div>
+                </div>
+            </div>
+            <div class="dresses-list">
+                <div *ngFor="let dress of filteredDresses" class="dresses-list__list">
+                    <div class="item" (mouseover)="dress.withInfo = true" (mouseleave)="dress.withInfo = false">
+                        <div class="item__photo" (mouseover)="dress.dressIsHovered = true" (mouseleave)="dress.dressIsHovered = false"
+                        [style.backgroundImage]="dress.dressIsHovered ? 'url('+ dress.photo2 +')' : 'url('+ dress.photo +')' ">  </div>
+                        <div  *ngIf="dress.withInfo" class="item__hover">
+                            <div [routerLink]="[ '/item',dress.id]" class="item__hover--quick">Quick view</div>
+                            <div class="item__hover--add">Add to list</div>
+                        </div>
+                        <div class="item__text">{{dress.color}} {{dress.style}} {{dress.style2}} Dress</div>
+                        <div class="item__price"><p>{{dress.price}}</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
